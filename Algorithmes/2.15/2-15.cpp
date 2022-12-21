@@ -1,35 +1,34 @@
-﻿#include <iostream>
+#include <iostream>
+#include <cmath>
+
 using namespace std;
 int main()
 {
-    setlocale(LC_ALL, "Rus");
-    int n, a, s;
+    setlocale(LC_ALL, "RUS");
+    int N, S, k;
     bool flag = false;
-    cin >> n;
-    cin >> s;
-    while (n > 0)
-    {
-        a = n % 10;
 
-        if (a == s)
+    cout << "Введите число N и число S" << endl;
+    cin >> N >> S;
+
+    while (N > 0 && !flag)
+    {
+        k = N % 10;
+        if (k == S)
         {
             flag = true;
-        }
-        if (n >= 10)
-        {
-            n = n / 10;
+            cout << "Число S входит в запись числа N" << endl;
         }
         else
         {
-            break;
+            N /= 10;
         }
     }
-    if (flag == true)
+
+    if (!flag)
     {
-        std::cout << "Цифра S найдена" << std::endl;
+        cout << "Число S не входит в запись числа N" << endl;
     }
-    else
-    {
-        std::cout << "Цифра S не найдена" << std::endl;
-    }
+
+    return 0;
 }
