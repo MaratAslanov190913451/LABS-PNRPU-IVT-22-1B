@@ -1,27 +1,36 @@
-﻿#include <iostream>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "Rus");
-    float n, f;
-    bool flag = true;
-    std::cout << "Числа вводятся с клавиатуры до тех пор, пока не встретится число 0 (0 — признак окончания ввода). " << std::endl;
-    std::cin >> f;
-    while (f != 0)
+    setlocale(LC_ALL, "RUS");
+    int num1, num2;
+    bool ordered = true;
+
+    cout << "Введите первое число" << endl;
+    cin >> num1;
+
+    while (num1 != 0)
     {
-        std::cin >> n;
-        if (n < f && n != 0)
+        cout << "Введите следующее число" << endl;
+        cin >> num2;
+
+        if (num2 != 0 && num1 > num2)
         {
-            flag = false;
+            ordered = false;
         }
-        f = n;
+        num1 = num2;
     }
-    if (flag)
+
+    if (ordered)
     {
-        std::cout << "Числа идут по возрастанию" << std::endl;
+        cout << "Последовательность упорядочена по возрастанию." << endl;
     }
     else
     {
-        std::cout << "Числа не идут по возрастанию" << std::endl;
+        cout << "Последовательность не упорядочена по возрастанию." << endl;
     }
+
+    return 0;
 }
