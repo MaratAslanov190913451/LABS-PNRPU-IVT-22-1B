@@ -1,14 +1,22 @@
-﻿#include <iostream>
+#include <iostream>
+
 using namespace std;
+
 int main()
 {
-    int n;
-    int r = 0; // reversed
-    cin >> n;
-    while (n > 0)
-    {
-        r = r * 10 + n % 10;
-        n = n / 10;
-    }
-    cout << r << endl;
+	setlocale(LC_ALL, "RUS");
+	int N;
+	int r = 0;
+
+	cout << "Введите натуральное число N" << endl;
+	cin >> N;
+
+	while (N > 0)
+	{
+		r = r * 10 + N % 10;
+		N /= 10;
+	}
+	cout << "Введенное число в обратном порядке будет выглядеть так: " << r << endl;
+
+	return 0;
 }
