@@ -3,12 +3,19 @@
 int main()
 {
     setlocale(LC_ALL, "Rus");
-    int n, fact = 1,* f = &fact;
-    std::cout << "N: " << std::endl;
+
+    int n, factorial = 1, i = 1;
+    int* pn, * pi = &i;
+
+    std::cout << "Введите число N для расчета 'N!': " << std::endl;
     std::cin >> n;
-    for (int i = 1; i <= n; i++)
+    pn = &n;
+
+    while (*pi <= *pn)
     {
-        *f = *f * i;
+        factorial *= *pi;
+        i++;
     }
-    std::cout << "'N!': " << fact << std::endl;
+
+    std::cout << "'N!': " << factorial << std::endl;
 }
