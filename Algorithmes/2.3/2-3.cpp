@@ -3,18 +3,18 @@ using namespace std;
 int main()
 {
     int n;
-    int tmp, sum = 0;
+    int k, sum = 0;
 
     cin >> n;
 
     for (int i = 1; i <= n; i++)
     {
         tmp = 1;
-        for (int j = i; j <= 2 * i; j++)
+        for (int j = 0; j <= i * i; j++)
         {
-            tmp *= j;
+            k *=i + j;
         }
-        sum += tmp;
+        sum += k;
     }
     cout << sum << endl;
 }
