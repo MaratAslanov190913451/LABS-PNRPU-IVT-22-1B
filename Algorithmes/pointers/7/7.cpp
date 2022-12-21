@@ -1,10 +1,17 @@
-﻿#include <iostream>
+﻿include <iostream>
 
 int main()
 {
     setlocale(LC_ALL, "Rus");
-    int n, * ptr = &n;
-    std::cout << "n: " << std::endl;
-    std::cin >> *ptr;
-    std::cout << n << std::endl;
+
+    int x = 0;
+    int* px = &x;
+
+    std::cout << "Введите переменную х: " << std::endl;
+    std::cin >> x;
+    std::cout << "Ваше значение х: " << *px << std::endl;
+
+    std::cout << "Введите новое значение для х: " << std::endl;
+    std::cin >> x;
+    std::cout << "Ваше значение х: " << *px << std::endl;
 }
