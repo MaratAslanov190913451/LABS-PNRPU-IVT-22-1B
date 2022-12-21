@@ -1,29 +1,23 @@
-﻿#include <iostream>
+include <iostream>
 
 int main()
 {
-	setlocale(LC_ALL, "RUS");
-	int a1;
-	int a2;
-	int* b1;
-	int* b2;
+    setlocale(LC_ALL, "Rus");
 
-	std::cout << "Ââåäèòå çíà÷åíèå ïåðâîé ïåðåìåííîé" << std::endl;
-	std::cin >> a1;
+    int chislo1, chislo2, kostylDlyaVtorogo;
 
-	b1 = &a1;
+    int* pointer1, * pointer2;
 
-	std::cout << "Ââåäèòå çíà÷åíèå âòîðîé ïåðåìåííîé" << std::endl;
-	std::cin >> a2;
+    std::cout << "Введите первую переменную: " << std::endl;
+    std::cin >> chislo1;
+    pointer1 = &chislo1;
+    std::cout << "Введите вторую переменную: " << std::endl;
+    std::cin >> kostylDlyaVtorogo;
+    pointer2 = &kostylDlyaVtorogo;
 
-	b2 = &a2;
+    chislo2 = *pointer1;
+    chislo1 = *pointer2;
 
-	int tmp = *b1;
-	*b1 = *b2;
-	*b2 = tmp;
-
-	std::cout << "Ïîñëå çàìåíû çíà÷åíèå ïåðâîé ïåðåìåííîé ðàâíÿåòñÿ " << *b1 << std::endl;
-	std::cout << "Ïîñëå çàìåíû çíà÷åíèå âòîðîé ïåðåìåííîé ðàâíÿåòñÿ " << *b2 << std::endl;
-
-	return 0;
+    std::cout << "Первая переменная поменялась на: " << chislo1 << std::endl;
+    std::cout << "Вторая переменная поменялась на: " << chislo2 << std::endl;
 }
