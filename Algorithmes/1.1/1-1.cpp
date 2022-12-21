@@ -2,22 +2,22 @@
 using namespace std;
 int main()
 {
-    int a, b, c, max;
+    int n1, n2, n3, max;
 
-    cin >> a >> b >> c;
+    cin >> n1 >> n2 >> n3;
 
-    if (a >= b)
+    if (n1 >= n2)
     {
-        max = a;
+        max = n1;
     }
     else
     {
-        max = b;
+        max = n2;
     }
 
-    if (c > max)
+    if (n3 > max)
     {
-        max = c;
+        max = n3;
     }
 
     cout << max << endl;
