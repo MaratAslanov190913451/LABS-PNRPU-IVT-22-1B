@@ -1,13 +1,24 @@
-﻿#include <iostream>
+#include <iostream>
+#include <cmath>
+
 using namespace std;
+
 int main()
 {
-    int n, sum = 0;
-    cin >> n;
-    while (n > 0)
+	setlocale(LC_ALL, "RUS");
+
+    int N;
+    int sum = 0;
+
+    cout << "Введите натуральное число N" << endl;
+    cin >> N;
+
+    while (N > 0)
     {
-        sum += n % 10;
-        n = n / 10;
+        sum += N % 10;
+        N /= 10;
     }
     cout << sum << endl;
+
+    return 0;
 }
