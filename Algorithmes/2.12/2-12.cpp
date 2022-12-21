@@ -3,25 +3,25 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "Rus");
-    int range, max, min, n;
-    cout << "Введите длину последовательности: " << endl;
-    cin >> range;
-    cout << "Введите первое число: " << endl;
+    int num, max, min, n;
+    cout << "Введите количество чисел последовательности: " << endl;
     cin >> n;
-    max = n;
-    min = n;
-    for (int i = 1; i <= range - 1; i++)
+    cout << "Введите первое число: " << endl;
+    cin >> num;
+    max = num;
+    min = num;
+    for (int i = 1; i <= n - 1; i++)
     {
         cout << "Введите следующее число:" << endl;
-        cin >> n;
+        cin >> num;
 
-        if (n > max)
+        if (num > max)
         {
-            max = n;
+            max = num;
         }
-        else if (n < min)
+        else if (num < min)
         {
-            min = n;
+            min = num;
         }
     }
     cout << "Сумма минимального и максимального числа: " << max + min << endl;
