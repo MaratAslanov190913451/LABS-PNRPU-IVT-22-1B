@@ -3,11 +3,17 @@
 int main()
 {
     setlocale(LC_ALL, "Rus");
-    float n1, n2, * ptr1, * ptr2, sum = 0;
-    std::cin >> n1;
-    ptr1 = &n1;
-    std::cin >> n2;
-    ptr2 = &n2;
-    sum = *ptr1 + *ptr2;
-    std::cout << "Сумма: " << sum << std::endl;
+
+    double chislo1, chislo2;
+
+    double* pointer1, * pointer2;
+
+    std::cout << "Введите первое double число: " << std::endl;
+    std::cin >> chislo1;
+    pointer1 = &chislo1;
+    std::cout << "Введите второе double число: " << std::endl;
+    std::cin >> chislo2;
+    pointer2 = &chislo2;
+
+    std::cout << "Сумма двух double чисел: " << *pointer1 + *pointer2 << std::endl;
 }
