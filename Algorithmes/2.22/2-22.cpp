@@ -1,22 +1,33 @@
-﻿#include <iostream>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "Rus");
-    float x, n, max, count = 1;
-    std::cin >> n;
-    max = sin(n + 1 / n);
-    std::cout << max << std::endl;
-    for (int i = 2; i <= n; i++)
-    {
-        x = sin(n + i / n);
-        std::cout << x << std::endl;
-        if (x > max)
-        {
-            count = i;
-            max = x;
-        }
-    }
-    std::cout << "Максимальный элемент: " << max << std::endl;
-    std::cout << "Номер: " << count << std::endl;
+	setlocale(LC_ALL, "RUS");
+	float n, a, max;
+	int i = 2;
+	int num = 1;
+
+	cout << "Введите количество элементов n" << endl;
+	cin >> n;
+
+	max = sin(n + 1 / n);
+
+	while (i <= n)
+	{
+		a = sin(n + i / n);
+		if (a > max)
+		{
+			max = a;
+			num = i;
+		}
+		i++;
+
+	}
+	cout << "Максимальный элемент последовательности" << max << endl;
+	cout << "Его номер:" << num << endl;
+
+	return 0;
 }
