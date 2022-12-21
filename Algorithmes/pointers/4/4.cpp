@@ -3,27 +3,37 @@
 int main()
 {
     setlocale(LC_ALL, "Rus");
-    int range, n, max, min,* ptr;
-    std::cout << "Range:" << std::endl;
-    std::cin >> range;
-    std::cout << "Введите первое число:" << std::endl;
-    std::cin >> n;
-    ptr = &n;
-    max = *ptr;
-    min = *ptr;
-    for (int i = 0; i < range - 1; i++)
+
+    int chislo, maxChislo, minChislo, dlina;
+
+    int *pointer;
+
+    std::cout << "Введите длину последовательности: " << std::endl;
+    std::cin >> dlina;
+
+    std::cout << "Введите " << dlina << " чисел через enter" << std::endl;
+    std::cin >> chislo;
+    pointer = &chislo;
+
+    maxChislo = *pointer;
+    minChislo = *pointer;
+
+    for (int i = 1; i <= dlina - 1; i++)
     {
-        std::cin >> n;
-        ptr = &n;
-        if (*ptr > max)
+        std::cin >> chislo;
+        pointer = &chislo;
+
+        if (*pointer > maxChislo)
         {
-            max = *ptr;
+            maxChislo = *pointer;
         }
-        if (*ptr < min)
+
+        if (*pointer < minChislo)
         {
-            min = *ptr;
+            minChislo = *pointer;
         }
     }
-    std::cout << "Max: " << max << std::endl;
-    std::cout << "Min: " << min << std::endl;
+
+    std::cout << "Максимальное число в последовательности: " << maxChislo << std::endl;
+    std::cout << "Минимальное число в последовательности: " << minChislo << std::endl;
 }
