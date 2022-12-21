@@ -1,25 +1,47 @@
-﻿#include <iostream>
-using namespace std;
+#include <iostream>
+
 int main()
 {
-    int n, space, stars = 1;
+    setlocale(LC_ALL, "Rus");
 
-    cin >> n;
+start:
+    float n;
+    int numspace;
+    int numstar = 1;
+    char space = ' ';
+    char star = '*';
+    std::cout << "Введите основание равнобедренного треугольника N" << std::endl;
+    std::cin >> n;
 
-    space = n / 2;
-
-    for (int i = 0; i < n; i += 2)
+    if ((n <= 3) or ((int)n != n) or ((int)n % 2 != 1))
     {
-        for (int j = 0; j < space; j++)
-        {
-            std::cout << ' ';
-        }
-        for (int j = 0; j < stars; j++)
-        {
-            std::cout << '*';
-        }
-        space--;
-        stars += 2;
-        cout << endl;
+        std::cout << "ошибка введите N нечетное и больше 3-ёх" << std::endl;
+        goto start;
     }
+
+    numspace = n / 2;
+    std::cout << std::endl;
+
+    for (int i = 1; i <= n; i += 2)
+    {
+        for (int j = 1; j <= numspace; j++)
+        {
+            std::cout << space;
+        }
+
+        for (int j = 1; j <= numstar; j++)
+        {
+            std::cout << star;
+        }
+
+        if (numstar != n)
+        {
+            std::cout << std::endl;
+        }
+
+        numspace--;
+        numstar += 2;
+    }
+
+    std::cout << std::endl;
 }
